@@ -13,7 +13,7 @@
             <h1 class="mt-5">Wallet Balance</h1>
             <p class="lead">Current balance for {{ .address }}</p>
 
-            {{if .validAddress}}
+            {{if .balances}}
             <ul class="list-group list-group-flush">
                 {{ range .balances }}
                 <li class="list-group-item">{{ .Coin }}: {{ .Balance }}</li>

@@ -2,7 +2,6 @@ package wallet
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 )
@@ -24,9 +23,10 @@ func GetTokens() *Tokens {
 	}
 
 	tokens := &Tokens{}
-	json.Unmarshal(bs, tokens)
-	fmt.Println(len(*tokens))
-	fmt.Println(fmt.Sprintf("%+v", (*tokens)[0]))
+	jsonError := json.Unmarshal(bs, tokens)
+	if jsonError != nil {
+		log.Fatal(jsonError)
+	}
 
 	return tokens
 }

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 
 	"github.com/Bullrich/go-wallet/wallet"
 	"github.com/gofiber/fiber/v2"
@@ -13,6 +14,21 @@ import (
 
 func main() {
 	startWebServer()
+}
+
+func getPort() int {
+	envPort := os.Getenv("PORT")
+	if len(envPort) == 0 {
+		fmt.Println("No port env detected. Using default")
+		return 3000
+	}
+
+	port, err := strconv.Atoi(envPort)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return port
 }
 
 func startWebServer() {
@@ -26,20 +42,21 @@ func startWebServer() {
 		Views: engine,
 	})
 
-	app.Get("/balance/", func(c *fiber.Ctx) error {
+	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("balances", nil)
 	})
 
-	app.Get("/balance/:address", func(c *fiber.Ctx) error {
-		address := c.Params("address")
-		balanceMap := obtainFormattedBalance(apiKey, address)
-
-		return c.Render("walletBalance", balanceMap)
+	app.Get("/balances", func(c *fiber.Ctx) error {
+		return c.Render("balances", nil)
 	})
 
 	app.Get("/balances/:address", func(c *fiber.Ctx) error {
 		address := c.Params("address")
 		user := wallet.NewUser(apiKey, address)
+		if user == nil {
+			return c.SendStatus(500)
+		}
+
 		balances := user.GetAllBalances(*tokens)
 
 		fmt.Println(fmt.Sprintf("%+v", balances))
@@ -51,19 +68,12 @@ func startWebServer() {
 		return c.Render("walletBalance", data)
 	})
 
-	app.Get("/api/balance/:address", func(c *fiber.Ctx) error {
-		user := wallet.NewUser(apiKey, c.Params("address"))
-		balance := user.GetBalances()
-		balanceJSON, err := json.Marshal(balance)
-		if err != nil {
-			return c.SendStatus(400)
-		}
-
-		return c.SendString(string(balanceJSON))
-	})
-
 	app.Get("/api/balances/:address", func(c *fiber.Ctx) error {
 		user := wallet.NewUser(apiKey, c.Params("address"))
+		if user == nil {
+			return c.SendStatus(500)
+		}
+
 		balance := user.GetAllBalances(*tokens)
 		balanceJSON, err := json.Marshal(balance)
 		if err != nil {
@@ -73,32 +83,12 @@ func startWebServer() {
 		return c.SendString(string(balanceJSON))
 	})
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World 👋!")
+	app.Get("/health", func(c *fiber.Ctx) error {
+		return c.SendString("Ok 👋!")
 	})
 
-	err := app.Listen(":3000")
+	err := app.Listen(fmt.Sprintf(":%v", getPort()))
 	if err != nil {
 		log.Fatal(err)
-	}
-}
-
-func obtainFormattedBalance(apiKey string, address string) *fiber.Map {
-	user := wallet.NewUser(apiKey, address)
-	if user == nil {
-		return &fiber.Map{
-			"validAddress": false,
-		}
-	}
-
-	balance := user.GetBalances()
-
-	return &fiber.Map{
-		"address":      address,
-		"wei":          balance["wei"],
-		"sai":          balance["sai"],
-		"mkr":          balance["mkr"],
-		"dai":          balance["dai"],
-		"validAddress": true,
 	}
 }
