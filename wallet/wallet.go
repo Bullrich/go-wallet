@@ -7,6 +7,7 @@ import (
 	"math/big"
 	"sort"
 	"strconv"
+	"strings"
 
 	token "github.com/Bullrich/go-wallet/token"
 	"github.com/Bullrich/go-wallet/utils"
@@ -119,7 +120,10 @@ func LimitDecimals(cv []CoinValue, decimals int) []CoinValueString {
 
 	for _, coin := range cv {
 		balance, _ := coin.Balance.Float64()
-		cvs = append(cvs, CoinValueString{Coin: coin.Coin, Balance: fmt.Sprintf(format, balance)})
+		stringBalance := strings.TrimRight(strings.TrimRight(fmt.Sprintf(format, balance), "0"), ".")
+		if stringBalance != "0" {
+			cvs = append(cvs, CoinValueString{Coin: coin.Coin, Balance: stringBalance})
+		}
 	}
 
 	return cvs
