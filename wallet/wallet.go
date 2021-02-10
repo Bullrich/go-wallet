@@ -6,6 +6,7 @@ import (
 	"math"
 	"math/big"
 	"sort"
+	"strconv"
 
 	token "github.com/Bullrich/go-wallet/token"
 	"github.com/Bullrich/go-wallet/utils"
@@ -30,7 +31,6 @@ func NewUser(infuraAPIKey string, address string) *User {
 	}
 
 	infuraAddress := fmt.Sprintf("https://mainnet.infura.io/v3/%s", infuraAPIKey)
-	//infuraAddress := fmt.Sprintf("https://rinkeby.infura.io/v3/%s", infuraAPIKey)
 
 	client, err := ethclient.Dial(infuraAddress)
 	utils.CheckError(err)
@@ -69,29 +69,35 @@ func divideTokens(tokenAmount *big.Int, decimals int) Coin {
 	return new(big.Float).Quo(tokenFloat, d)
 }
 
-type valueFunc func(user User) Coin
-
 type CoinValue struct {
 	Coin    string
 	Balance *big.Float
 }
 
+type CoinValueString struct {
+	Coin    string
+	Balance string
+}
+
 func (u User) GetAllBalances(t Tokens) []CoinValue {
 	c := make(chan CoinValue)
 
-	for _, token := range t {
-		go u.getTokenDataBalance(token, &c)
+	for _, td := range t {
+		go u.getTokenDataBalance(td, &c)
 	}
 
 	balances := make([]CoinValue, 0)
 
 	defaultValue := big.NewFloat(0)
 
+	eth := u.GetWeiBalance()
+
+	balances = append(balances, CoinValue{Coin: "ETH", Balance: eth})
+
 	for range t {
 		balance := <-c
 		if balance.Balance.Cmp(defaultValue) != 0 {
 			balances = append(balances, balance)
-			// balances[balance.coin] = balance.balance
 		}
 	}
 
@@ -104,5 +110,17 @@ func (u User) GetAllBalances(t Tokens) []CoinValue {
 
 func (u User) getTokenDataBalance(t TokenData, c *chan CoinValue) {
 	balance := u.getTokenBalance(&t)
-	(*c) <- CoinValue{Coin: t.Symbol, Balance: balance}
+	*c <- CoinValue{Coin: t.Symbol, Balance: balance}
+}
+
+func LimitDecimals(cv []CoinValue, decimals int) []CoinValueString {
+	cvs := make([]CoinValueString, 0)
+	format := "%." + strconv.Itoa(decimals) + "f"
+
+	for _, coin := range cv {
+		balance, _ := coin.Balance.Float64()
+		cvs = append(cvs, CoinValueString{Coin: coin.Coin, Balance: fmt.Sprintf(format, balance)})
+	}
+
+	return cvs
 }

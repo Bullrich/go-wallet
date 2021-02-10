@@ -59,8 +59,10 @@ func startWebServer() {
 
 		balances := user.GetAllBalances(*tokens)
 
+		formattedBalance := wallet.LimitDecimals(balances, 5)
+
 		data := &fiber.Map{
-			"balances": balances,
+			"balances": formattedBalance,
 			"address": address,
 		}
 
