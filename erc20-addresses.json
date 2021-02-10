@@ -1,0 +1,440 @@
+[
+  {
+    "address": "0xE41d2489571d322189246DaFA5ebDe1F4699F498",
+    "symbol": "ZRX",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x05f4a42e251f2d52b8ed15E9FEdAacFcEF1FAD27",
+    "symbol": "ZIL",
+    "decimal": 12,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "symbol": "WBTC",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xD850942eF8811f2A866692A623011bDE52a462C1",
+    "symbol": "VEN",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "symbol": "USDT",
+    "decimal": 6,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "symbol": "USDC",
+    "decimal": 6,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x0000000000085d4780B73119b644AE5ecd22b376",
+    "symbol": "TUSD",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x3883f5e181fccaF8410FA61e12b59BAd963fb645",
+    "symbol": "THETA",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",
+    "symbol": "SNX",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x744d70FDBE2Ba4CF95131626614a1763DF805B9E",
+    "symbol": "SNT",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xB4EFd85c19999D84251304bDA99E90B92300Bd93",
+    "symbol": "RPL",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x4a220E6096B25EADb88358cb44068A3248254675",
+    "symbol": "QNT",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x8E870D67F660D95d5be530380D0eC0bd388289E1",
+    "symbol": "PAX",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07",
+    "symbol": "OMG",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xA15C7Ebe1f07CaF6bFF097D8a589fb8AC49Ae5B3",
+    "symbol": "NPXS",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xB62132e35a6c13ee1EE0f84dC5d40bad8d815206",
+    "symbol": "NEXO",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+    "symbol": "MKR",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xBBbbCA6A901c926F240b89EacB641d8Aec7AEafD",
+    "symbol": "LRC",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "symbol": "LINK",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x2AF5D2aD76741191D15Dfe7bF6aC92d4Bd912Ca3",
+    "symbol": "LEO",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x80fB784B7eD66730e8b1DBd9820aFD29931aab03",
+    "symbol": "LEND",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6fB3e0A217407EFFf7Ca062D46c26E5d60a14d69",
+    "symbol": "IOTX",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xFA1a856Cfa3409CFa145Fa4e20Eb270dF3EB21ab",
+    "symbol": "IOST",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6f259637dcD74C767781E37Bc6133cd6A68aa161",
+    "symbol": "HT",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6c6EE5e31d828De241282B9606C8e98Ea48526E2",
+    "symbol": "HOT",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd",
+    "symbol": "GUSD",
+    "decimal": 2,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6810e776880C02933D47DB1b9fc05908e5386b96",
+    "symbol": "GNO",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x419D0d8BdD9aF5e606Ae2232ed285Aff190E711b",
+    "symbol": "FUN",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c",
+    "symbol": "ENJ",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xbf2179859fc6D5BEE9Bf9158632Dc51678a4100e",
+    "symbol": "ELF",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x13f11C9905A08ca76e3e853bE63D4f0944326C72",
+    "symbol": "DIVX",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "symbol": "DAI",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xba9d4199faB4f26eFE3551D490E3821486f135Ba",
+    "symbol": "CHSB",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xe8780B48bdb05F928697A5e8155f672ED91462F7",
+    "symbol": "CAS",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+    "symbol": "BUSD",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
+    "symbol": "BNB",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x0D8775F648430679A709E98d2b0Cb6250d2887EF",
+    "symbol": "BAT",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    "symbol": "UNI",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6e1A19F235bE7ED8E3369eF73b196C07257494DE",
+    "symbol": "WFIL",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
+    "symbol": "GRT",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x8dae6cb04688c62d939ed9b68d32bc62e49970b1",
+    "symbol": "aCRV",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b",
+    "symbol": "CRO",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x0316EB71485b0Ab14103307bf65a021042c6d380",
+    "symbol": "HBTC",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x111111111117dc0aa78b770fa6a738034120c302",
+    "symbol": "1INCH",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x4e15361fd6b4bb609fa63c81a2be19d873717870",
+    "symbol": "FTM",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x75231f58b43240c9718dd58b4967c5114342a86c",
+    "symbol": "OKB",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d",
+    "symbol": "CEL",
+    "decimal": 4,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+    "symbol": "YFI",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xe452e6ea2ddeb012e20db73bf5d3863a3ac8d77a",
+    "symbol": "wCELO",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x967da4048cD07aB37855c090aAF366e4ce1b9F48",
+    "symbol": "OCEAN",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x35A18000230DA775CAc24873d00Ff85BccdeD550",
+    "symbol": "cUNI",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+    "symbol": "COMP",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xaf30d2a7e90d7dc361c8c4585e9bb7d2f6f15bc7",
+    "symbol": "ST",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b",
+    "symbol": "NXM",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xfd09cf7cfffa9932e33668311c4777cb9db3c9be",
+    "symbol": "wMANA",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xcca0c9c383076649604eE31b20248BC04FdF61cA",
+    "symbol": "BTMX",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x0Ae055097C6d159879521C384F1D2123D1f195e6",
+    "symbol": "STAKE",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x0d438f3b5175bebc262bf23753c1e53d03432bde",
+    "symbol": "wNXM",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+    "symbol": "SUSHI",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x5af2be193a6abca9c8817001f45744777db30756",
+    "symbol": "VGX",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x178c820f862b14f316509ec36b13123da19a6054",
+    "symbol": "EWTB",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
+    "symbol": "SXP",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x3845badAde8e6dFF049820680d1F14bD3903a5d0",
+    "symbol": "SAND",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+    "symbol": "SAI",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828",
+    "symbol": "UMA",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xdf574c24545e5ffecb9a659c229253d4111d87e1",
+    "symbol": "HUSD",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+    "symbol": "sUSD",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec",
+    "symbol": "POLY",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x36F3FD68E7325a35EB768F1AedaAe9EA0689d723",
+    "symbol": "ESD",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac",
+    "symbol": "STORJ",
+    "decimal": 8,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xba100000625a3754423978a60c9317c58a424e3d",
+    "symbol": "BAL",
+    "decimal": 18,
+    "type": "ERC20"
+  },
+  {
+    "address": "0xf34960d9d60be18cc1d5afc1a6f012a723a28811",
+    "symbol": "KCS",
+    "decimal": 6,
+    "type": "ERC20"
+  },
+  {
+    "address": "0x798d1be841a82a273720ce31c822c61a67a601c3",
+    "symbol": "DIGG",
+    "decimal": 9,
+    "type": "ERC20"
+  }
+]
