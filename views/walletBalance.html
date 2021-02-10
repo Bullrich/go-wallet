@@ -14,11 +14,22 @@
             <p class="lead">Current balance for {{ .address }}</p>
 
             {{if .balances}}
-            <ul class="list-group list-group-flush">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Coin</th>
+                    <th scope="col">Amount</th>
+                </tr>
+                </thead>
+                <tbody>
                 {{ range .balances }}
-                <li class="list-group-item">{{ .Coin }}: {{ .Balance }}</li>
+                <tr>
+                    <th scope="row">{{ .Coin }}</th>
+                    <td>{{ .Balance }}</td>
+                </tr>
                 {{ end }}
-            </ul>
+                </tbody>
+            </table>
             {{ else }}
             <p>Didn't find currency for this address</p>
             {{ end }}

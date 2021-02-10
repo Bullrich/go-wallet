@@ -99,8 +99,6 @@ func (u User) GetAllBalances(t Tokens) []CoinValue {
 		return balances[i].Balance.Cmp(balances[j].Balance) > 0
 	})
 
-	fmt.Println(balances)
-
 	return balances
 }
 

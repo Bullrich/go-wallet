@@ -59,10 +59,9 @@ func startWebServer() {
 
 		balances := user.GetAllBalances(*tokens)
 
-		fmt.Println(fmt.Sprintf("%+v", balances))
-
 		data := &fiber.Map{
 			"balances": balances,
+			"address": address,
 		}
 
 		return c.Render("walletBalance", data)
