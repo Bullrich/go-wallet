@@ -31,7 +31,12 @@
                 </tbody>
             </table>
             {{ else }}
-            <p>Didn't find currency for this address</p>
+                {{ if .error }}
+                <div class="alert alert-danger" role="alert">
+                    {{ .error }}
+                </div>
+                {{ end }}
+            <p>Didn't find currencies for this address</p>
             {{ end }}
         </div>
     </main>

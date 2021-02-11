@@ -119,7 +119,7 @@ func LimitDecimals(cv []CoinValue, decimals int) []CoinValueString {
 	format := "%." + strconv.Itoa(decimals) + "f"
 
 	for _, coin := range cv {
-		balance, _ := coin.Balance.Float64()
+		balance, _ := coin.Balance.Float32()
 		stringBalance := strings.TrimRight(strings.TrimRight(fmt.Sprintf(format, balance), "0"), ".")
 		if stringBalance != "0" {
 			cvs = append(cvs, CoinValueString{Coin: coin.Coin, Balance: stringBalance})

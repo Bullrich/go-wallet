@@ -54,16 +54,16 @@ func startWebServer() {
 		address := c.Params("address")
 		user := wallet.NewUser(apiKey, address)
 		if user == nil {
-			return c.SendStatus(500)
+			return c.Render("walletBalance", &fiber.Map{"address": address})
 		}
 
 		balances := user.GetAllBalances(*tokens)
 
-		formattedBalance := wallet.LimitDecimals(balances, 5)
+		formattedBalance := wallet.LimitDecimals(balances, 4)
 
 		data := &fiber.Map{
 			"balances": formattedBalance,
-			"address": address,
+			"address":  address,
 		}
 
 		return c.Render("walletBalance", data)
@@ -72,13 +72,13 @@ func startWebServer() {
 	app.Get("/api/balances/:address", func(c *fiber.Ctx) error {
 		user := wallet.NewUser(apiKey, c.Params("address"))
 		if user == nil {
-			return c.SendStatus(500)
+			return c.SendStatus(404)
 		}
 
 		balance := user.GetAllBalances(*tokens)
 		balanceJSON, err := json.Marshal(balance)
 		if err != nil {
-			return c.SendStatus(400)
+			return c.SendStatus(500)
 		}
 
 		return c.SendString(string(balanceJSON))
