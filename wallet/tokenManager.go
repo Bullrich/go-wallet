@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"path/filepath"
 )
 
 // Tokens is a list with most ERC20 tokens and their addresses
@@ -17,7 +18,15 @@ type TokenData struct {
 }
 
 func GetTokens() *Tokens {
-	bs, err := ioutil.ReadFile("erc20-addresses.json")
+	return getTokens("erc20-addresses.json")
+}
+
+func getTokens(file string) *Tokens {
+	af, fe := filepath.Abs(file)
+	if fe != nil {
+		log.Fatal(fe)
+	}
+	bs, err := ioutil.ReadFile(af)
 	if err != nil {
 		log.Fatal(err)
 	}

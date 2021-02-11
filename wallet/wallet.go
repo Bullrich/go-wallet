@@ -42,11 +42,12 @@ func NewUser(infuraAPIKey string, address string) *User {
 }
 
 // GetWeiBalance returns balance of Wei (ether) in the account
-func (u User) GetWeiBalance() *big.Float {
+func (u User) GetWeiBalance() *CoinValue {
 	balance, err := u.client.BalanceAt(context.Background(), u.address, nil)
 	utils.CheckError(err)
 
-	return divideTokens(balance, 18)
+	dt := divideTokens(balance, 18)
+	return &CoinValue{Coin: "ETH", Balance: dt}
 }
 
 func (u User) getTokenBalance(t *TokenData) Coin {
@@ -93,7 +94,7 @@ func (u User) GetAllBalances(t Tokens) []CoinValue {
 
 	eth := u.GetWeiBalance()
 
-	balances = append(balances, CoinValue{Coin: "ETH", Balance: eth})
+	balances = append(balances, *eth)
 
 	for range t {
 		balance := <-c
