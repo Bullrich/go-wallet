@@ -16,7 +16,7 @@ func getClient() *User {
 func TestUser(t *testing.T) {
 	client := getClient()
 	if client == nil {
-		t.Fatal("Fatal is nil")
+		t.Fatal("client is nil")
 	}
 }
 

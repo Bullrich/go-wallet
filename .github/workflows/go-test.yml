@@ -1,0 +1,17 @@
+on: [push, pull_request]
+name: Continuous Testing
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.14.x
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test
+        env:
+          INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
+          TEST_ADDRESS: ${{ secrets.TEST_ADDRESS }}
+        run: INFURA_API_KEY="$INFURA_API_KEY" TEST_ADDRESS="$TEST_ADDRESS" go test ./...
