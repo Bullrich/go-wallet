@@ -39,3 +39,12 @@ func getTokens(file string) *Tokens {
 
 	return tokens
 }
+
+func (t *Tokens) GetSymbols() []string {
+	names := make([]string, 0)
+	for _, token := range *t {
+		names = append(names, token.Symbol)
+	}
+
+	return names
+}

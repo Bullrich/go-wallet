@@ -19,12 +19,22 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <hr/>
+        {{ if .tokens }}
+        <h3>Supported Tokens</h3>
+        <ul class="list-group">
+            {{ range $t := .tokens }}
+            <li class="list-group-item">{{ $t }}</li>
+            {{ end }}
+        </ul>
+        {{ end }}
     </div>
 </main>
 
 <footer class="footer mt-auto py-3">
     <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <span class="text-muted">Made with ❤ by <a href="https://bullrich.dev">Javier Bullrich</a> </span>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

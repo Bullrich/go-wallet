@@ -43,7 +43,7 @@ func startWebServer() {
 	})
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("balances", nil)
+		return c.Render("balances", &fiber.Map{"tokens": tokens.GetSymbols()})
 	})
 
 	app.Get("/balances", func(c *fiber.Ctx) error {
